@@ -106,7 +106,7 @@ class SXSWaveforms:
                 raise ValueError("Invalid delta_t: {}".format(delta_t))
 
             ts = np.arange(t_interp_i, t_interp_f, delta_t)
-            interplated_waveform = waveform_lm.interpolate(ts).data
+            interplated_waveform = waveform_lm.interpolate(ts).ndarray
             self.original_data[str(l) + str(m)] = ComplexData(
                 interplated_waveform, index=ts - tp
             )
